@@ -20,12 +20,13 @@ public class Sorting1 {
 
 
         for (int i = 0; i < 5; i++) {
-                if (nilia[i] > max) max = nilia[i];
-                if (nilia[i] < min) min = nilia[i];
+                if (nilia[i] > max){max = nilia[i];}
+                if (nilia[i] < min){min = nilia[i];}
         }
 
         System.out.println("\nNilai tertinggi: " + max);
         System.out.println("Nilai terendah : " + min);
+
 
     }
 }
