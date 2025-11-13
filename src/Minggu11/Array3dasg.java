@@ -15,17 +15,33 @@ public class Array3dasg {
             }
         };
 
-        for (int i = 0; i < 3; i++) {
-            System.out.println("BLOK " + (i + 1) + ":");
-            for (int j = 0; j < 2; j++) {
-                System.out.println("  Minggu " + (j + 1) + ":");
-                for (int k = 0; k < 5; k++) {
-                    System.out.println("    Sensor " + (k + 1) + ": " + DATASUHU[i][j][k] + "°C");
+        for (int minggu = 0; minggu < 2; minggu++) {
+            System.out.println("| MINGGU " + (minggu + 1) + "                                  |");
+            System.out.println("+----------+------------+------------+------------+");
+
+            for (int sensor = 0; sensor < 5; sensor++) {
+                System.out.printf("| Sensor %d |", sensor + 1);
+                for (int blok = 0; blok < 3; blok++) {
+                    System.out.printf("  %6.1f°C  |", DATASUHU[blok][minggu][sensor]);
                 }
                 System.out.println();
             }
-            System.out.println("--------------------------");
+            System.out.println("+----------+------------+------------+------------+");
         }
+
+        System.out.println("Suhu Ruang 2, Minggu 1, Sensor 3 = " + DATASUHU[1][0][2] + "°C");
+
+        double total = 0;
+        for (int i = 0; i < 3 ;i++){
+            for(int j = 0; j < 2 ;j++){
+                for(int k = 0;k < 5;k++){
+                    total = total + DATASUHU[i][j][k];
+                }
+            }
+        }
+
+        System.out.println("Rata-rata = " + (total/30) + "°C");
+
 
     }
 }
